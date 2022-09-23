@@ -20,6 +20,7 @@ public class PrimerProyecto {
         System.out.println("Hello World!");
         //int numero1 = (int) Math.random()*3;
         //System.out.println(numero1);
+        //Cualquier cosa
         new EstructuraPartidos().iniciaFaseGrupos();
         new VentanaPrincipal().setVisible(true);
     }
