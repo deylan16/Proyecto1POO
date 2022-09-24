@@ -61,18 +61,21 @@ class Partido {
         return local.getNombre() + " vs. " + visita.getNombre() + "    ("+ marcadorLocal + " - " + marcadorVisita+ ")";
     }
     
+    //Se revisan los maracdores reales para definir cual fue el equipo perdedor 
     public Equipo getPerdedor(){
-        if (marcadorLocal == marcadorVisita) return null;
+        if (marcadorLocalReal == marcadorVisitaReal) return null;
         
-        if (marcadorLocal > marcadorVisita)
+        if (marcadorLocalReal > marcadorVisitaReal)
             return visita;
         return local;
     }
     
     public Equipo getGanador(){
-        if (marcadorLocal == marcadorVisita) return null;
+        if (marcadorLocalReal == marcadorVisitaReal) {
+            return null;
+        }
         
-        if (marcadorLocal > marcadorVisita)
+        if (marcadorLocalReal > marcadorVisitaReal)
             return local;
         return visita;
     }

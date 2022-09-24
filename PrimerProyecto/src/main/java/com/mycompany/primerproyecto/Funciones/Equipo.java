@@ -72,6 +72,11 @@ public class Equipo {
         this.nombre = nombre;
     }
     
+    public void tostring(){
+        System.out.println(nombre+": \n"+ "Goles a favor: "+ golesAfavor+"\n"+ "Goles en contra: "+
+                golesEncontra +"\n"+ "Puntos actuales: "+ puntos);
+        
+    }
     
     
 }

@@ -286,11 +286,52 @@ public class EstructuraPartidos {
         
     }
     
-    static public void actualiceMarcadorReal(String Marcador1,String marcador2){
-        partidosFaseGrupos.get(Datos.partidoActual).setMarcadorLocalReal(Integer.parseInt(Marcador1));
-        partidosFaseGrupos.get(Datos.partidoActual).setMarcadorVisitaReal(Integer.parseInt(marcador2));
-        System.out.println("helooooooooooooooooooooooooooooooooooooooo");
-        System.out.println(EstructuraPartidos.infoPartido("MarcadorVisitaReal","Grupos",Datos.partidoActual));
+    //Se cambia el tipo de funcion para hacer validaciones y retornar int en caso de errores 
+    static public int actualiceMarcadorReal(String Marcador1,String marcador2){
+        try {
+            int marcador_local = Integer.parseInt(Marcador1);
+            int marcador_visita = Integer.parseInt(marcador2);
+            }
+        catch(Exception e) {//Validacion de que la entrada sea un numero
+            return -1;
+        }
+        int marcador_local = Integer.parseInt(Marcador1);
+        int marcador_visita = Integer.parseInt(marcador2);
+        partidosFaseGrupos.get(Datos.partidoActual).setMarcadorLocalReal(marcador_local);
+        partidosFaseGrupos.get(Datos.partidoActual).setMarcadorVisitaReal(marcador_visita);
+                    
+        //Se almacena cuantos goles hicieron 
+        partidosFaseGrupos.get(Datos.partidoActual).getVisita().setGolesAfavor(marcador_visita);
+        partidosFaseGrupos.get(Datos.partidoActual).getVisita().setGolesEncontra(marcador_local);
+        partidosFaseGrupos.get(Datos.partidoActual).getLocal().setGolesAfavor(marcador_local);
+        partidosFaseGrupos.get(Datos.partidoActual).getLocal().setGolesEncontra(marcador_visita);
+        
+        int puntaje_actual_local = partidosFaseGrupos.get(Datos.partidoActual).getLocal().getPuntos();
+        int puntaje_actual_visita = partidosFaseGrupos.get(Datos.partidoActual).getVisita().getPuntos();
+        
+        if (marcador_local == (marcador_visita)){//En caso de empate
+            //Se almacena el puntaje de cada equipo en caos de empate(1pts)
+            partidosFaseGrupos.get(Datos.partidoActual).getVisita().setPuntos(puntaje_actual_visita+1);
+            partidosFaseGrupos.get(Datos.partidoActual).getLocal().setPuntos(puntaje_actual_local+1);
+        }
+        if (marcador_local > (marcador_visita)){//En caso de que local sea el ganador
+            //Se almacena el puntaje para el equipo local (ganador)(3pts)
+            partidosFaseGrupos.get(Datos.partidoActual).getLocal().setPuntos(puntaje_actual_local+3);
+            
+        }
+        else{// En caso que la visita sea ganador
+             //Se almacena el puntaje para el equipo visita (ganador)(3pts)
+            partidosFaseGrupos.get(Datos.partidoActual).getVisita().setPuntos(puntaje_actual_visita+3);
+        
+
+        }
+        System.out.println("El ganador es: \n");
+        partidosFaseGrupos.get(Datos.partidoActual).getGanador().tostring();
+
+        System.out.println("El perdedor es: \n");
+        partidosFaseGrupos.get(Datos.partidoActual).getPerdedor().tostring();
+        
+    return 0;
     }
     
     
