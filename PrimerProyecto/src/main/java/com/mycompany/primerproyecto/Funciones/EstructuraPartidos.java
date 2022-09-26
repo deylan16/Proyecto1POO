@@ -80,17 +80,29 @@ public class EstructuraPartidos {
         
     }
     public Equipo[] MejoresGrupo2(Equipo uno,Equipo dos, Equipo tres, Equipo cuatro){
-        ArrayList<Integer> puntos = new ArrayList<Integer>();
-        puntos.add(uno.getPuntos());
-        puntos.add(dos.getPuntos());
-        puntos.add(tres.getPuntos());
-        puntos.add(cuatro.getPuntos());
-        Comparator<Integer> comparador = Collections.reverseOrder();
-        puntos.sort(comparador);
-        //TODO:
-        return new Equipo[]{uno, dos};
+        ArrayList<Equipo> equipos = new ArrayList<Equipo>();
+        equipos.add(uno);
+        equipos.add(dos);
+        equipos.add(tres);
+        equipos.add(cuatro);
+        
+      
+      int len = equipos.size();
+    
+      for (var i = 0; i < len ; i++) {
+        for(var j = 0 ; j < len - i - 1; j++){
+        if (equipos.get(j).getPuntos() > equipos.get(j + 1).getPuntos()) { 
+          Equipo temp = equipos.get(j);
+          equipos.set(j, equipos.get(j+1));
+          equipos.set(j + 1, temp);
+        }
+       }
+      }
 
+      return new Equipo[]{equipos.get(3), equipos.get(2)};
     }
+    
+    
     public Equipo[] MejoresGrupo(String grupo){
         if(grupo.equals("A")){
             Equipo uno = buscaEquipo("Qatar");
