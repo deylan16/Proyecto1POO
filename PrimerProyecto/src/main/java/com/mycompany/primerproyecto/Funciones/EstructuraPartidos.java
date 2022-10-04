@@ -7,6 +7,7 @@ package com.mycompany.primerproyecto.Funciones;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Random;
 
 /**
  *
@@ -30,17 +31,17 @@ public class EstructuraPartidos {
             if(equipo3.getNombre().equals(equipo)){
                 return equipo3;
             }
-
-
         }
         return null;
     }
+    
     static public Partido demePartidoEquipo(int indice){ 
         //System.out.println(partidosFaseGrupos.get(0));
         return partidosFaseGrupos.get(indice);
         
     }
-    static public String infoPartido(String opcion,String Fase,int Ipartido){
+    
+    static public String infoPartido(String opcion,String Fase,int Ipartido)    {
         if(Fase == "Grupos"){
             
             if(opcion == "Local"){
@@ -79,7 +80,146 @@ public class EstructuraPartidos {
         
         
     }
-    public Equipo[] MejoresGrupo2(Equipo uno,Equipo dos, Equipo tres, Equipo cuatro){
+    
+    //Funcion que retorna un equipo que elige de forma aleatoria   
+    public Equipo rifa(Equipo uno,Equipo dos){
+      Random rand = new Random();
+      int int_random = rand.nextInt(2);
+      if (int_random == 0)
+        return uno;
+      else
+        return dos;
+    } 
+    //Funciin que busca el partido en que ambos equipos jugaron
+    //Retorna el equipo ganador de tal partido
+    public Equipo equipo_ganador(Equipo uno, Equipo dos){
+       for(Partido partido : partidosFaseGrupos){
+           //Los equipos pueden ser visita o local
+           if (partido.getVisita()== uno || partido.getLocal() == uno & partido.getVisita()== dos || partido.getLocal() == dos )
+               //Si el partido quedo empatado 
+               //Se genera una rifa 
+               if (partido.estaEmpatado()){
+                   return rifa(uno,dos);
+               }
+               else
+               {
+                   //Si no estaba empatado se retorna el ganador
+                   return partido.getGanador();
+               }
+        }
+       return null;
+   } 
+    //Funcion que retorna el equipo con mayor diferencia de goles positiva
+    public Equipo equipo_dif_goles_pos(Equipo uno, Equipo dos){
+        //Si tienen la misma diferencia de goles 
+        if(uno.getGolesAfavor() == dos.getGolesAfavor()){
+            //Se llama la funcion para ver cual equipo metio mas goles
+            return equipo_mas_goles(uno, dos);}
+        if(uno.getGolesAfavor() < dos.getGolesAfavor())
+            return dos;
+        else
+            return uno;
+    }
+    
+    //Funcion que retorna cual equipo tiene mas goles a favor
+    public Equipo equipo_mas_goles(Equipo uno,Equipo dos){
+        //Si tienen el mismo numero de goles a favor
+        if(uno.getGolesAfavor() == dos.getGolesAfavor()){
+            //Se llama a la funcion para ver cual fue el resultado del partido entre ambos equipos
+            return equipo_ganador(uno,dos);}
+        if(uno.getGolesAfavor() < dos.getGolesAfavor())
+            return dos;
+        else
+            return uno;
+    }  
+    
+    //Funcion que desempata todo un grupo
+    //Retorna los dos equipos con mayor diferencia de goles positiva
+    public Equipo[] desempate_4equipos_diferencia_goles(Equipo uno,Equipo dos, Equipo tres, Equipo cuatro){
+        ArrayList<Equipo> equipos = new ArrayList<Equipo>();
+        equipos.add(uno);
+        equipos.add(dos);
+        equipos.add(tres);
+        equipos.add(cuatro);
+        int len = equipos.size();
+        //Metodo de ordenamiento 
+        //Los dos mejores equipos quedan en la pos 3 y 2
+        for (var i = 0; i < len ; i++) {
+            for(var j = 0 ; j < len - i - 1; j++){
+                if (equipos.get(j).getDiferencia_de_goles()> equipos.get(j + 1).getDiferencia_de_goles()) { 
+                    Equipo temp = equipos.get(j);
+                    equipos.set(j, equipos.get(j+1));
+                    equipos.set(j + 1, temp);
+        }
+       }
+      }
+      //Si los equipos tienen la misma diferencia de goles 
+      if(equipos.get(0).getDiferencia_de_goles() == equipos.get(1).getDiferencia_de_goles()       //Si el equipo en primera, segunda y tercera pos estan empates de puntos
+         & equipos.get(1).getDiferencia_de_goles()==equipos.get(2).getDiferencia_de_goles()
+         & equipos.get(2).getDiferencia_de_goles()==equipos.get(3).getDiferencia_de_goles()){
+          System.out.println("Existe un empate de diferencia de goles entre el primero, segundo, tercero y cuarto equipo");
+          //Se retorna los la funcion para desempatar por el numero de goles anotados
+          return desempate_4equipos_mas_goles(equipos.get(0),equipos.get(1),
+                                             equipos.get(2),equipos.get(3));
+      }
+      //Si la segunda posicion y la tercera posicion tienen la misma diferencia de goles
+      if(equipos.get(1).getDiferencia_de_goles() == equipos.get(2).getDiferencia_de_goles()){
+          //Se saca el equipo con mas goles anotados
+          Equipo equipo_con_mas_goles = equipo_mas_goles(equipos.get(1),equipos.get(2));
+          //Pasa a ser nuestra segunda posicion (pasa a la siguiente fase)
+          equipos.set(2, equipo_con_mas_goles);
+          System.out.println("Existe un empate de diferencia de goles entre el segundo y tercer equipo");}
+
+   
+   return new Equipo[]{equipos.get(3), equipos.get(2)};}
+
+    //Funcion que desempata segun el equipo que tiene mas goles a favor 
+    //Retorna dos equipos con mayor numero de goles anotados
+    public Equipo[] desempate_4equipos_mas_goles(Equipo uno,Equipo dos, Equipo tres, Equipo cuatro){
+        ArrayList<Equipo> equipos = new ArrayList<Equipo>();
+        equipos.add(uno);
+        equipos.add(dos);
+        equipos.add(tres);
+        equipos.add(cuatro);
+        int len = equipos.size();
+        //Metodo de ordenamiento 
+        //Los dos mejores equipos segun goles a favor quedan en la pos 3 y 2
+        for (var i = 0; i < len ; i++) {
+            for(var j = 0 ; j < len - i - 1; j++){
+                if (equipos.get(j).getGolesAfavor()> equipos.get(j + 1).getGolesAfavor()) { 
+                    Equipo temp = equipos.get(j);
+                    equipos.set(j, equipos.get(j+1));
+                    equipos.set(j + 1, temp);
+        }
+       }
+      }
+      //Si los equipos tienen la cantidad de goles a favor  
+      if(equipos.get(0).getGolesAfavor() == equipos.get(1).getGolesAfavor()       //Si el equipo en primera, segunda y tercera pos estan empates de puntos
+        & equipos.get(1).getGolesAfavor()==equipos.get(2).getGolesAfavor()
+        & equipos.get(2).getGolesAfavor()==equipos.get(3).getGolesAfavor()){
+        //SE realiza una rifa
+        //NO es neceario ver los resultados de sus partidos
+        //Este caso se genera si todos los partidos tienen la misma cantidad de puntos y goles 
+        //Por lo que sus partidos tambien tendran los mismos resultados (Todos ganaron al menos una vez o todos empates) 
+        System.out.println("Existe un empate de goles anotados entre el primero, segundo, tercero y cuarto equipo");
+        Equipo ganador_rifa1 = rifa(equipos.get(0),equipos.get(1));
+        Equipo ganador_rifa2 = rifa(equipos.get(2),equipos.get(3));
+        return new Equipo[]{ganador_rifa1, ganador_rifa2};
+      
+      }
+      //Si el segundo y tercer equipo tienen el mismo  numero de goles a favor 
+      if(equipos.get(1).getGolesAfavor() == equipos.get(2).getGolesAfavor()){
+          //Se busca el resultado de su partido y se retorna el ganador de tal partido 
+            System.out.println("Existe un empate de goles anotados entre el segundo y tercer equipo");
+            //Busca el ganador del partido entre los dos equipos y lo coloca en el segundo lugar
+            equipos.set(2,equipo_ganador(equipos.get(2),equipos.get(1)));
+      }
+
+   
+   return new Equipo[]{equipos.get(3), equipos.get(2)};}
+
+          
+    public  Equipo[] MejoresGrupo2(Equipo uno,Equipo dos, Equipo tres, Equipo cuatro){
         ArrayList<Equipo> equipos = new ArrayList<Equipo>();
         equipos.add(uno);
         equipos.add(dos);
@@ -98,10 +238,24 @@ public class EstructuraPartidos {
         }
        }
       }
-
+      //Si los equipos tienen el mismo numero de puntos
+      if(equipos.get(0).getPuntos() == equipos.get(1).getPuntos()       
+         & equipos.get(1).getPuntos()==equipos.get(2).getPuntos()
+         & equipos.get(2).getPuntos()==equipos.get(3).getPuntos()){
+          System.out.println("Existe un empate entre el primero, segundo, tercero y cuarto equipo");
+          return desempate_4equipos_diferencia_goles(equipos.get(0),equipos.get(1),
+                                                       equipos.get(2),equipos.get(3));
+      }
+      //Si el segundo lugar y tercer lugar tienen el mismo numero de puntos
+      if(equipos.get(1).getPuntos() == equipos.get(2).getPuntos()){
+            System.out.println("Existe un empate entre el segundo y tercer equipo");
+            //Se llama una funcion que retorna el equipo con mayor diferencia de goles positiva
+            Equipo equipo_mayor_dif_goles_positiva = equipo_dif_goles_pos(equipos.get(1),equipos.get(2));
+            equipos.set(2, equipo_mayor_dif_goles_positiva);
+      }
       return new Equipo[]{equipos.get(3), equipos.get(2)};
     }
-    
+        
     
     public Equipo[] MejoresGrupo(String grupo){
         if(grupo.equals("A")){
@@ -176,6 +330,7 @@ public class EstructuraPartidos {
         }
         return null;
     }
+    
     
     public void iniciaFaseGrupos(){
         equipos.removeAll(equipos);
