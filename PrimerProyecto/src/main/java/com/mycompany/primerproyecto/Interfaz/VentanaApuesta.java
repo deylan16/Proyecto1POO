@@ -351,6 +351,7 @@ public class VentanaApuesta extends javax.swing.JFrame {
             if(Datos.partidoActual == 48){
                 System.out.println("###############++++");
                 System.out.println("Grupo A");
+                //EstructuraPartidos.partidosFaseGrupos.get(58).set;
                 System.out.println(new EstructuraPartidos().MejoresGrupo("A")[0].getNombre());
                 System.out.println(new EstructuraPartidos().MejoresGrupo("A")[1].getNombre());
                 System.out.println("Grupo B");
