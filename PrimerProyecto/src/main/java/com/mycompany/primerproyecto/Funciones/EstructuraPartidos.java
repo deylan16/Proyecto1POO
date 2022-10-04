@@ -232,24 +232,30 @@ public class EstructuraPartidos {
 
           
     public  Equipo[] MejoresGrupo2(Equipo uno,Equipo dos, Equipo tres, Equipo cuatro){
-        ArrayList<Equipo> equipos = new ArrayList<Equipo>();
-        equipos.add(uno);
-        equipos.add(dos);
-        equipos.add(tres);
-        equipos.add(cuatro);
+      ArrayList<Equipo> equipos = new ArrayList<Equipo>();
+      equipos.add(uno);
+      equipos.add(dos);
+      equipos.add(tres);
+      equipos.add(cuatro);
+        
         
       
       int len = equipos.size();
     
       for (var i = 0; i < len ; i++) {
         for(var j = 0 ; j < len - i - 1; j++){
-        if (equipos.get(j).getPuntos() > equipos.get(j + 1).getPuntos()) { 
-          Equipo temp = equipos.get(j);
-          equipos.set(j, equipos.get(j+1));
-          equipos.set(j + 1, temp);
-        }
+                        
+            if (equipos.get(j).getPuntos() > equipos.get(j + 1).getPuntos()) { 
+                Equipo temp = equipos.get(j);
+                equipos.set(j, equipos.get(j+1));
+                equipos.set(j + 1, temp);
+                  
+            }
+            
        }
       }
+      
+
       //Si los equipos tienen el mismo numero de puntos
       if(equipos.get(0).getPuntos() == equipos.get(1).getPuntos()       
          & equipos.get(1).getPuntos()==equipos.get(2).getPuntos()
@@ -269,12 +275,12 @@ public class EstructuraPartidos {
     }
         
     
-    public Equipo[] MejoresGrupo(String grupo){
+    public  Equipo[] MejoresGrupo(String grupo){
         if(grupo.equals("A")){
             Equipo uno = buscaEquipo("Qatar");
             Equipo dos = buscaEquipo("Ecuador");
             Equipo tres = buscaEquipo("Senegal");
-            Equipo cuatro = buscaEquipo("Países Bajos");
+            Equipo cuatro = buscaEquipo("Paises Bajos");
             return MejoresGrupo2(uno,dos,tres,cuatro);
 
         }
@@ -470,13 +476,16 @@ public class EstructuraPartidos {
     
     //Se cambia el tipo de funcion para hacer validaciones y retornar int en caso de errores 
     static public int actualiceMarcadorReal(String Marcador1,String marcador2){
+        
         try {
             int marcador_local = Integer.parseInt(Marcador1);
             int marcador_visita = Integer.parseInt(marcador2);
             }
         catch(Exception e) {//Validacion de que la entrada sea un numero
+            
             return -1;
         }
+        
         int marcador_local = Integer.parseInt(Marcador1);
         int marcador_visita = Integer.parseInt(marcador2);
         partidosFaseGrupos.get(Datos.partidoActual).setMarcadorLocalReal(marcador_local);

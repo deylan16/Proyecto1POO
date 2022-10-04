@@ -21,6 +21,7 @@ public class Equipo {
     private ArrayList<Partido> partidos;
 
     Equipo(String nombre, int puntuacion) {
+        this.puntos = 0;
         this.nombre = nombre;
         this.puntuacion = puntuacion;
         this.partidos = new ArrayList<Partido>();
