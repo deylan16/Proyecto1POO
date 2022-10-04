@@ -71,6 +71,18 @@ public class EstructuraPartidos {
             else if(opcion == "MarcadorLocalReal"){
                 return Integer.toString(demePartidoEquipo(Ipartido).getMarcadorLocalReal());               
               } 
+            else if(opcion == "GanadorReal"){
+                return demePartidoEquipo(Ipartido).getGanadorReal().getNombre();               
+            } 
+            else if(opcion == "GanadorAdivinanza"){
+                if (Datos.getUsuarioActual().getApuestasGrupos()[Ipartido][0] == Datos.getUsuarioActual().getApuestasGrupos()[Ipartido][1]) return null;
+        
+                if (Integer.parseInt(Datos.getUsuarioActual().getApuestasGrupos()[Ipartido][0]) > Integer.parseInt(Datos.getUsuarioActual().getApuestasGrupos()[Ipartido][1]))
+                    return demePartidoEquipo(Ipartido).getLocal().getNombre();
+                return demePartidoEquipo(Ipartido).getVisita().getNombre();
+                //Datos.getUsuarioActual().getApuestasGrupos()[partido][0]
+                //return demePartidoEquipo(Ipartido).getGanadorAdivinanza().getNombre();               
+            } 
         }
         else{
             return "no";
@@ -199,6 +211,8 @@ public class EstructuraPartidos {
         equipos.add( new Equipo("Ghana",1393)); 
         equipos.add( new Equipo("Uruguay",1640)); 
         equipos.add( new Equipo("Corea del Sur",1526));
+        equipos.add( new Equipo("Por Definir",0));
+        
         
         partidosFaseGrupos.removeAll(partidosFaseGrupos);
        
@@ -262,26 +276,27 @@ public class EstructuraPartidos {
         partidosFaseGrupos.add(new Partido(buscaEquipo( "Camerún"),buscaEquipo("Brasil"),"2 Diciembre","20:00","Estadio Nacional de Luisail"));
         partidosFaseGrupos.add(new Partido(buscaEquipo("Serbia"),buscaEquipo("Suiza"),"2 Diciembre","20:00","Estadio 974(Doha)"));
         //48 abajo
-        partidosFaseGrupos.add(new Partido("3 Diciembre","16:00","(Rayan)"));
-        partidosFaseGrupos.add(new Partido("3 Diciembre","20:00","(Rayan)"));
-        partidosFaseGrupos.add(new Partido("4 Diciembre","16:00","(Doha)"));
-        partidosFaseGrupos.add(new Partido("4 Diciembre","20:00","(Jor)"));
-        partidosFaseGrupos.add(new Partido("5 Diciembre","16:00","(Al Wakrah)"));
-        partidosFaseGrupos.add(new Partido("5 Diciembre","20:00","(Doha)"));
-        partidosFaseGrupos.add(new Partido("6 Diciembre","16:00","(Rayan)"));
-        partidosFaseGrupos.add(new Partido("6 Diciembre","20:00","(Lusail)"));
+        
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"3 Diciembre","16:00","(Rayan)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"3 Diciembre","20:00","(Rayan)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"4 Diciembre","16:00","(Doha)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"4 Diciembre","20:00","(Jor)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"5 Diciembre","16:00","(Al Wakrah)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"5 Diciembre","20:00","(Doha)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"6 Diciembre","16:00","(Rayan)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"6 Diciembre","20:00","(Lusail)"));
         //56
-        partidosFaseGrupos.add(new Partido("9 Diciembre","16:00","(Rayan)"));
-        partidosFaseGrupos.add(new Partido("9 Diciembre","20:00","(Lusail)"));
-        partidosFaseGrupos.add(new Partido("10 Diciembre","20:00","(Doha)"));
-        partidosFaseGrupos.add(new Partido("10 Diciembre","20:00","(Jor)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"9 Diciembre","16:00","(Rayan)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"9 Diciembre","20:00","(Lusail)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"10 Diciembre","20:00","(Doha)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"10 Diciembre","20:00","(Jor)"));
         //60
-        partidosFaseGrupos.add(new Partido("13 Diciembre","20:00","(Lusail)"));
-        partidosFaseGrupos.add(new Partido("14 Diciembre","20:00","(Jor)"));
-        //61
-        partidosFaseGrupos.add(new Partido("17 Diciembre","16:00","(Rayan)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"13 Diciembre","20:00","(Lusail)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"14 Diciembre","20:00","(Jor)"));
         //62
-        partidosFaseGrupos.add(new Partido("18 Diciembre","16:00","(Lusail)"));
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"17 Diciembre","16:00","(Rayan)"));
+        //63
+        partidosFaseGrupos.add(new Partido(buscaEquipo("Por Definir"),buscaEquipo("Por Definir"),"18 Diciembre","16:00","(Lusail)"));
         
         
     }

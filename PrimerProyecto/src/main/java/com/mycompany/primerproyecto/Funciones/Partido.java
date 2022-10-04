@@ -76,6 +76,20 @@ class Partido {
             return local;
         return visita;
     }
+    public Equipo getGanadorAdivinanza(){
+        if (marcadorLocal == marcadorVisita) return null;
+        
+        if (marcadorLocal > marcadorVisita)
+            return local;
+        return visita;
+    }
+    public Equipo getGanadorReal(){
+        if (marcadorLocalReal == marcadorVisitaReal) return null;
+        
+        if (marcadorLocalReal > marcadorVisitaReal)
+            return local;
+        return visita;
+    }
     
     public boolean estaEmpatado(){
         return marcadorLocal == marcadorVisita;

@@ -33,8 +33,34 @@ public class VentanaOctavos extends javax.swing.JFrame {
         lbEscudo2Partido49 = new javax.swing.JLabel();
         lbEscudo1Partido49 = new javax.swing.JLabel();
         btApostarPartido49 = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        pnlPartido50 = new javax.swing.JPanel();
+        lbEscudo2Partido50 = new javax.swing.JLabel();
+        lbEscudo1Partido50 = new javax.swing.JLabel();
+        btApostarPartido50 = new javax.swing.JButton();
+        pnlPartido51 = new javax.swing.JPanel();
+        lbEscudo2Partido51 = new javax.swing.JLabel();
+        lbEscudo1Partido51 = new javax.swing.JLabel();
+        btApostarPartido51 = new javax.swing.JButton();
+        pnlPartido52 = new javax.swing.JPanel();
+        lbEscudo2Partido52 = new javax.swing.JLabel();
+        lbEscudo1Partido52 = new javax.swing.JLabel();
+        btApostarPartido52 = new javax.swing.JButton();
+        pnlPartido53 = new javax.swing.JPanel();
+        lbEscudo2Partido53 = new javax.swing.JLabel();
+        lbEscudo1Partido53 = new javax.swing.JLabel();
+        btApostarPartido53 = new javax.swing.JButton();
+        pnlPartido54 = new javax.swing.JPanel();
+        lbEscudo2Partido54 = new javax.swing.JLabel();
+        lbEscudo1Partido54 = new javax.swing.JLabel();
+        btApostarPartido54 = new javax.swing.JButton();
+        pnlPartido55 = new javax.swing.JPanel();
+        lbEscudo2Partido55 = new javax.swing.JLabel();
+        lbEscudo1Partido55 = new javax.swing.JLabel();
+        btApostarPartido55 = new javax.swing.JButton();
+        pnlPartido56 = new javax.swing.JPanel();
+        lbEscudo2Partido56 = new javax.swing.JLabel();
+        lbEscudo1Partido56 = new javax.swing.JLabel();
+        btApostarPartido56 = new javax.swing.JButton();
 
         pnl21Nov.setBackground(new java.awt.Color(0, 102, 0));
 
@@ -45,7 +71,7 @@ public class VentanaOctavos extends javax.swing.JFrame {
 
         lbEscudo2Partido49.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Visita","Grupos",48)+".png"));
 
-            lbEscudo1Partido49.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Local","Grupos",0)+".png"));
+            lbEscudo1Partido49.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Local","Grupos",48)+".png"));
 
                 btApostarPartido49.setBackground(new java.awt.Color(0, 102, 0));
                 btApostarPartido49.setText("Apostar");
@@ -82,50 +108,404 @@ public class VentanaOctavos extends javax.swing.JFrame {
                         .addContainerGap())
                 );
 
-                javax.swing.GroupLayout pnl21NovLayout = new javax.swing.GroupLayout(pnl21Nov);
-                pnl21Nov.setLayout(pnl21NovLayout);
-                pnl21NovLayout.setHorizontalGroup(
-                    pnl21NovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnl21NovLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(pnlPartido49, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(288, Short.MAX_VALUE))
-                );
-                pnl21NovLayout.setVerticalGroup(
-                    pnl21NovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnl21NovLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(pnlPartido49, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(192, Short.MAX_VALUE))
-                );
+                pnlPartido50.setBackground(new java.awt.Color(204, 204, 0));
+                pnlPartido50.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 0), new java.awt.Color(204, 204, 0), null, null));
+                pnlPartido50.setPreferredSize(new java.awt.Dimension(260, 260));
+                pnlPartido50.setRequestFocusEnabled(false);
 
-                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-                getContentPane().setLayout(layout);
-                layout.setHorizontalGroup(
-                    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGap(0, 564, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(0, 0, Short.MAX_VALUE)
-                            .addComponent(pnl21Nov, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, Short.MAX_VALUE)))
-                );
-                layout.setVerticalGroup(
-                    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGap(0, 378, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(0, 0, Short.MAX_VALUE)
-                            .addComponent(pnl21Nov, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, Short.MAX_VALUE)))
-                );
+                lbEscudo2Partido50.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Visita","Grupos",49)+".png"));
 
-                pack();
-            }// </editor-fold>//GEN-END:initComponents
+                    lbEscudo1Partido50.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Local","Grupos",49)+".png"));
+
+                        btApostarPartido50.setBackground(new java.awt.Color(0, 102, 0));
+                        btApostarPartido50.setText("Apostar");
+                        btApostarPartido50.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btApostarPartido50ActionPerformed(evt);
+                            }
+                        });
+
+                        javax.swing.GroupLayout pnlPartido50Layout = new javax.swing.GroupLayout(pnlPartido50);
+                        pnlPartido50.setLayout(pnlPartido50Layout);
+                        pnlPartido50Layout.setHorizontalGroup(
+                            pnlPartido50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlPartido50Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lbEscudo1Partido50)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbEscudo2Partido50)
+                                .addContainerGap())
+                            .addGroup(pnlPartido50Layout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(btApostarPartido50)
+                                .addContainerGap(98, Short.MAX_VALUE))
+                        );
+                        pnlPartido50Layout.setVerticalGroup(
+                            pnlPartido50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlPartido50Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(pnlPartido50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lbEscudo2Partido50)
+                                    .addComponent(lbEscudo1Partido50))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                                .addComponent(btApostarPartido50, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                        );
+
+                        pnlPartido51.setBackground(new java.awt.Color(204, 204, 0));
+                        pnlPartido51.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 0), new java.awt.Color(204, 204, 0), null, null));
+                        pnlPartido51.setPreferredSize(new java.awt.Dimension(260, 260));
+                        pnlPartido51.setRequestFocusEnabled(false);
+
+                        lbEscudo2Partido51.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Visita","Grupos",50)+".png"));
+
+                            lbEscudo1Partido51.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Local","Grupos",50)+".png"));
+
+                                btApostarPartido51.setBackground(new java.awt.Color(0, 102, 0));
+                                btApostarPartido51.setText("Apostar");
+                                btApostarPartido51.addActionListener(new java.awt.event.ActionListener() {
+                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        btApostarPartido51ActionPerformed(evt);
+                                    }
+                                });
+
+                                javax.swing.GroupLayout pnlPartido51Layout = new javax.swing.GroupLayout(pnlPartido51);
+                                pnlPartido51.setLayout(pnlPartido51Layout);
+                                pnlPartido51Layout.setHorizontalGroup(
+                                    pnlPartido51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlPartido51Layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(lbEscudo1Partido51)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lbEscudo2Partido51)
+                                        .addContainerGap())
+                                    .addGroup(pnlPartido51Layout.createSequentialGroup()
+                                        .addGap(94, 94, 94)
+                                        .addComponent(btApostarPartido51)
+                                        .addContainerGap(98, Short.MAX_VALUE))
+                                );
+                                pnlPartido51Layout.setVerticalGroup(
+                                    pnlPartido51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlPartido51Layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addGroup(pnlPartido51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(lbEscudo2Partido51)
+                                            .addComponent(lbEscudo1Partido51))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                                        .addComponent(btApostarPartido51, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap())
+                                );
+
+                                pnlPartido52.setBackground(new java.awt.Color(204, 204, 0));
+                                pnlPartido52.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 0), new java.awt.Color(204, 204, 0), null, null));
+                                pnlPartido52.setPreferredSize(new java.awt.Dimension(260, 260));
+                                pnlPartido52.setRequestFocusEnabled(false);
+
+                                lbEscudo2Partido52.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Visita","Grupos",51)+".png"));
+
+                                    lbEscudo1Partido52.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Local","Grupos",51)+".png"));
+
+                                        btApostarPartido52.setBackground(new java.awt.Color(0, 102, 0));
+                                        btApostarPartido52.setText("Apostar");
+                                        btApostarPartido52.addActionListener(new java.awt.event.ActionListener() {
+                                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                                btApostarPartido52ActionPerformed(evt);
+                                            }
+                                        });
+
+                                        javax.swing.GroupLayout pnlPartido52Layout = new javax.swing.GroupLayout(pnlPartido52);
+                                        pnlPartido52.setLayout(pnlPartido52Layout);
+                                        pnlPartido52Layout.setHorizontalGroup(
+                                            pnlPartido52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(pnlPartido52Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(lbEscudo1Partido52)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(lbEscudo2Partido52)
+                                                .addContainerGap())
+                                            .addGroup(pnlPartido52Layout.createSequentialGroup()
+                                                .addGap(94, 94, 94)
+                                                .addComponent(btApostarPartido52)
+                                                .addContainerGap(98, Short.MAX_VALUE))
+                                        );
+                                        pnlPartido52Layout.setVerticalGroup(
+                                            pnlPartido52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(pnlPartido52Layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addGroup(pnlPartido52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(lbEscudo2Partido52)
+                                                    .addComponent(lbEscudo1Partido52))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                                                .addComponent(btApostarPartido52, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addContainerGap())
+                                        );
+
+                                        pnlPartido53.setBackground(new java.awt.Color(204, 204, 0));
+                                        pnlPartido53.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 0), new java.awt.Color(204, 204, 0), null, null));
+                                        pnlPartido53.setPreferredSize(new java.awt.Dimension(260, 260));
+                                        pnlPartido53.setRequestFocusEnabled(false);
+
+                                        lbEscudo2Partido53.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Visita","Grupos",52)+".png"));
+
+                                            lbEscudo1Partido53.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Local","Grupos",52)+".png"));
+
+                                                btApostarPartido53.setBackground(new java.awt.Color(0, 102, 0));
+                                                btApostarPartido53.setText("Apostar");
+                                                btApostarPartido53.addActionListener(new java.awt.event.ActionListener() {
+                                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                                        btApostarPartido53ActionPerformed(evt);
+                                                    }
+                                                });
+
+                                                javax.swing.GroupLayout pnlPartido53Layout = new javax.swing.GroupLayout(pnlPartido53);
+                                                pnlPartido53.setLayout(pnlPartido53Layout);
+                                                pnlPartido53Layout.setHorizontalGroup(
+                                                    pnlPartido53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(pnlPartido53Layout.createSequentialGroup()
+                                                        .addContainerGap()
+                                                        .addComponent(lbEscudo1Partido53)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(lbEscudo2Partido53)
+                                                        .addContainerGap())
+                                                    .addGroup(pnlPartido53Layout.createSequentialGroup()
+                                                        .addGap(94, 94, 94)
+                                                        .addComponent(btApostarPartido53)
+                                                        .addContainerGap(98, Short.MAX_VALUE))
+                                                );
+                                                pnlPartido53Layout.setVerticalGroup(
+                                                    pnlPartido53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(pnlPartido53Layout.createSequentialGroup()
+                                                        .addContainerGap()
+                                                        .addGroup(pnlPartido53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                            .addComponent(lbEscudo2Partido53)
+                                                            .addComponent(lbEscudo1Partido53))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                                                        .addComponent(btApostarPartido53, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addContainerGap())
+                                                );
+
+                                                pnlPartido54.setBackground(new java.awt.Color(204, 204, 0));
+                                                pnlPartido54.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 0), new java.awt.Color(204, 204, 0), null, null));
+                                                pnlPartido54.setPreferredSize(new java.awt.Dimension(260, 260));
+                                                pnlPartido54.setRequestFocusEnabled(false);
+
+                                                lbEscudo2Partido54.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Visita","Grupos",53)+".png"));
+
+                                                    lbEscudo1Partido54.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Local","Grupos",53)+".png"));
+
+                                                        btApostarPartido54.setBackground(new java.awt.Color(0, 102, 0));
+                                                        btApostarPartido54.setText("Apostar");
+                                                        btApostarPartido54.addActionListener(new java.awt.event.ActionListener() {
+                                                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                                                btApostarPartido54ActionPerformed(evt);
+                                                            }
+                                                        });
+
+                                                        javax.swing.GroupLayout pnlPartido54Layout = new javax.swing.GroupLayout(pnlPartido54);
+                                                        pnlPartido54.setLayout(pnlPartido54Layout);
+                                                        pnlPartido54Layout.setHorizontalGroup(
+                                                            pnlPartido54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addGroup(pnlPartido54Layout.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addComponent(lbEscudo1Partido54)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(lbEscudo2Partido54)
+                                                                .addContainerGap())
+                                                            .addGroup(pnlPartido54Layout.createSequentialGroup()
+                                                                .addGap(94, 94, 94)
+                                                                .addComponent(btApostarPartido54)
+                                                                .addContainerGap(98, Short.MAX_VALUE))
+                                                        );
+                                                        pnlPartido54Layout.setVerticalGroup(
+                                                            pnlPartido54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addGroup(pnlPartido54Layout.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addGroup(pnlPartido54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                    .addComponent(lbEscudo2Partido54)
+                                                                    .addComponent(lbEscudo1Partido54))
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                                                                .addComponent(btApostarPartido54, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addContainerGap())
+                                                        );
+
+                                                        pnlPartido55.setBackground(new java.awt.Color(204, 204, 0));
+                                                        pnlPartido55.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 0), new java.awt.Color(204, 204, 0), null, null));
+                                                        pnlPartido55.setPreferredSize(new java.awt.Dimension(260, 260));
+                                                        pnlPartido55.setRequestFocusEnabled(false);
+
+                                                        lbEscudo2Partido55.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Visita","Grupos",54)+".png"));
+
+                                                            lbEscudo1Partido55.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Local","Grupos",54)+".png"));
+
+                                                                btApostarPartido55.setBackground(new java.awt.Color(0, 102, 0));
+                                                                btApostarPartido55.setText("Apostar");
+                                                                btApostarPartido55.addActionListener(new java.awt.event.ActionListener() {
+                                                                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                                                        btApostarPartido55ActionPerformed(evt);
+                                                                    }
+                                                                });
+
+                                                                javax.swing.GroupLayout pnlPartido55Layout = new javax.swing.GroupLayout(pnlPartido55);
+                                                                pnlPartido55.setLayout(pnlPartido55Layout);
+                                                                pnlPartido55Layout.setHorizontalGroup(
+                                                                    pnlPartido55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                    .addGroup(pnlPartido55Layout.createSequentialGroup()
+                                                                        .addContainerGap()
+                                                                        .addComponent(lbEscudo1Partido55)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                        .addComponent(lbEscudo2Partido55)
+                                                                        .addContainerGap())
+                                                                    .addGroup(pnlPartido55Layout.createSequentialGroup()
+                                                                        .addGap(94, 94, 94)
+                                                                        .addComponent(btApostarPartido55)
+                                                                        .addContainerGap(98, Short.MAX_VALUE))
+                                                                );
+                                                                pnlPartido55Layout.setVerticalGroup(
+                                                                    pnlPartido55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                    .addGroup(pnlPartido55Layout.createSequentialGroup()
+                                                                        .addContainerGap()
+                                                                        .addGroup(pnlPartido55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                            .addComponent(lbEscudo2Partido55)
+                                                                            .addComponent(lbEscudo1Partido55))
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                                                                        .addComponent(btApostarPartido55, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addContainerGap())
+                                                                );
+
+                                                                pnlPartido56.setBackground(new java.awt.Color(204, 204, 0));
+                                                                pnlPartido56.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 0), new java.awt.Color(204, 204, 0), null, null));
+                                                                pnlPartido56.setPreferredSize(new java.awt.Dimension(260, 260));
+                                                                pnlPartido56.setRequestFocusEnabled(false);
+
+                                                                lbEscudo2Partido56.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Visita","Grupos",55)+".png"));
+
+                                                                    lbEscudo1Partido56.setIcon(new javax.swing.ImageIcon("C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\"+new EstructuraPartidos().infoPartido("Local","Grupos",55)+".png"));
+
+                                                                        btApostarPartido56.setBackground(new java.awt.Color(0, 102, 0));
+                                                                        btApostarPartido56.setText("Apostar");
+                                                                        btApostarPartido56.addActionListener(new java.awt.event.ActionListener() {
+                                                                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                                                                btApostarPartido56ActionPerformed(evt);
+                                                                            }
+                                                                        });
+
+                                                                        javax.swing.GroupLayout pnlPartido56Layout = new javax.swing.GroupLayout(pnlPartido56);
+                                                                        pnlPartido56.setLayout(pnlPartido56Layout);
+                                                                        pnlPartido56Layout.setHorizontalGroup(
+                                                                            pnlPartido56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                            .addGroup(pnlPartido56Layout.createSequentialGroup()
+                                                                                .addContainerGap()
+                                                                                .addComponent(lbEscudo1Partido56)
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                                .addComponent(lbEscudo2Partido56)
+                                                                                .addContainerGap())
+                                                                            .addGroup(pnlPartido56Layout.createSequentialGroup()
+                                                                                .addGap(94, 94, 94)
+                                                                                .addComponent(btApostarPartido56)
+                                                                                .addContainerGap(98, Short.MAX_VALUE))
+                                                                        );
+                                                                        pnlPartido56Layout.setVerticalGroup(
+                                                                            pnlPartido56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                            .addGroup(pnlPartido56Layout.createSequentialGroup()
+                                                                                .addContainerGap()
+                                                                                .addGroup(pnlPartido56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                                    .addComponent(lbEscudo2Partido56)
+                                                                                    .addComponent(lbEscudo1Partido56))
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                                                                                .addComponent(btApostarPartido56, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addContainerGap())
+                                                                        );
+
+                                                                        javax.swing.GroupLayout pnl21NovLayout = new javax.swing.GroupLayout(pnl21Nov);
+                                                                        pnl21Nov.setLayout(pnl21NovLayout);
+                                                                        pnl21NovLayout.setHorizontalGroup(
+                                                                            pnl21NovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                            .addGroup(pnl21NovLayout.createSequentialGroup()
+                                                                                .addContainerGap()
+                                                                                .addGroup(pnl21NovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                    .addGroup(pnl21NovLayout.createSequentialGroup()
+                                                                                        .addComponent(pnlPartido49, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                        .addComponent(pnlPartido51, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                        .addComponent(pnlPartido53, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                        .addComponent(pnlPartido55, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                    .addGroup(pnl21NovLayout.createSequentialGroup()
+                                                                                        .addComponent(pnlPartido50, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                        .addComponent(pnlPartido52, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                        .addComponent(pnlPartido54, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                        .addComponent(pnlPartido56, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                        );
+                                                                        pnl21NovLayout.setVerticalGroup(
+                                                                            pnl21NovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                            .addGroup(pnl21NovLayout.createSequentialGroup()
+                                                                                .addContainerGap()
+                                                                                .addGroup(pnl21NovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                    .addComponent(pnlPartido55, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                    .addComponent(pnlPartido53, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                    .addComponent(pnlPartido51, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                    .addComponent(pnlPartido49, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                .addGroup(pnl21NovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                    .addComponent(pnlPartido50, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                    .addComponent(pnlPartido52, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                    .addComponent(pnlPartido54, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                    .addComponent(pnlPartido56, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                        );
+
+                                                                        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+                                                                        getContentPane().setLayout(layout);
+                                                                        layout.setHorizontalGroup(
+                                                                            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                            .addGroup(layout.createSequentialGroup()
+                                                                                .addComponent(pnl21Nov, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addGap(0, 0, Short.MAX_VALUE))
+                                                                        );
+                                                                        layout.setVerticalGroup(
+                                                                            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                            .addComponent(pnl21Nov, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        );
+
+                                                                        pack();
+                                                                    }// </editor-fold>//GEN-END:initComponents
 
     private void btApostarPartido49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApostarPartido49ActionPerformed
-        new VentanaApuesta(0).setVisible(true);
+        new VentanaApuesta(48).setVisible(true);
     }//GEN-LAST:event_btApostarPartido49ActionPerformed
+
+    private void btApostarPartido50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApostarPartido50ActionPerformed
+        new VentanaApuesta(49).setVisible(true);
+    }//GEN-LAST:event_btApostarPartido50ActionPerformed
+
+    private void btApostarPartido51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApostarPartido51ActionPerformed
+        new VentanaApuesta(50).setVisible(true);
+    }//GEN-LAST:event_btApostarPartido51ActionPerformed
+
+    private void btApostarPartido52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApostarPartido52ActionPerformed
+        new VentanaApuesta(51).setVisible(true);
+    }//GEN-LAST:event_btApostarPartido52ActionPerformed
+
+    private void btApostarPartido53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApostarPartido53ActionPerformed
+        new VentanaApuesta(52).setVisible(true);
+    }//GEN-LAST:event_btApostarPartido53ActionPerformed
+
+    private void btApostarPartido54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApostarPartido54ActionPerformed
+        new VentanaApuesta(53).setVisible(true);
+    }//GEN-LAST:event_btApostarPartido54ActionPerformed
+
+    private void btApostarPartido55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApostarPartido55ActionPerformed
+        new VentanaApuesta(54).setVisible(true);
+    }//GEN-LAST:event_btApostarPartido55ActionPerformed
+
+    private void btApostarPartido56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApostarPartido56ActionPerformed
+        new VentanaApuesta(55).setVisible(true);
+    }//GEN-LAST:event_btApostarPartido56ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,9 +544,37 @@ public class VentanaOctavos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btApostarPartido49;
+    private javax.swing.JButton btApostarPartido50;
+    private javax.swing.JButton btApostarPartido51;
+    private javax.swing.JButton btApostarPartido52;
+    private javax.swing.JButton btApostarPartido53;
+    private javax.swing.JButton btApostarPartido54;
+    private javax.swing.JButton btApostarPartido55;
+    private javax.swing.JButton btApostarPartido56;
     private javax.swing.JLabel lbEscudo1Partido49;
+    private javax.swing.JLabel lbEscudo1Partido50;
+    private javax.swing.JLabel lbEscudo1Partido51;
+    private javax.swing.JLabel lbEscudo1Partido52;
+    private javax.swing.JLabel lbEscudo1Partido53;
+    private javax.swing.JLabel lbEscudo1Partido54;
+    private javax.swing.JLabel lbEscudo1Partido55;
+    private javax.swing.JLabel lbEscudo1Partido56;
     private javax.swing.JLabel lbEscudo2Partido49;
+    private javax.swing.JLabel lbEscudo2Partido50;
+    private javax.swing.JLabel lbEscudo2Partido51;
+    private javax.swing.JLabel lbEscudo2Partido52;
+    private javax.swing.JLabel lbEscudo2Partido53;
+    private javax.swing.JLabel lbEscudo2Partido54;
+    private javax.swing.JLabel lbEscudo2Partido55;
+    private javax.swing.JLabel lbEscudo2Partido56;
     private javax.swing.JPanel pnl21Nov;
     private javax.swing.JPanel pnlPartido49;
+    private javax.swing.JPanel pnlPartido50;
+    private javax.swing.JPanel pnlPartido51;
+    private javax.swing.JPanel pnlPartido52;
+    private javax.swing.JPanel pnlPartido53;
+    private javax.swing.JPanel pnlPartido54;
+    private javax.swing.JPanel pnlPartido55;
+    private javax.swing.JPanel pnlPartido56;
     // End of variables declaration//GEN-END:variables
 }

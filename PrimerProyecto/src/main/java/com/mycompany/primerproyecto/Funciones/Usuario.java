@@ -18,7 +18,7 @@ public class Usuario {
         this.Usuario = Usuario;
         this.Nombre = Nombre;
         this.Contraseña = Contraseña;
-        this.ApuestasGrupos = new String[48][2];
+        this.ApuestasGrupos = new String[62][2];
     }
 
     public String[][] getApuestasGrupos() {

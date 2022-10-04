@@ -237,7 +237,6 @@ public class VentanaGrupos extends javax.swing.JFrame {
         lbEscudo1Partido48 = new javax.swing.JLabel();
         btApostarPartido48 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 255, 102));
 
         tpPrincipal.setBackground(new java.awt.Color(153, 153, 0));

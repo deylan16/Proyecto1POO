@@ -21,19 +21,40 @@ public class VentanaApuesta extends javax.swing.JFrame {
      * Creates new form VentanaApuesta
      */
     public VentanaApuesta(int partido) {
+       
         
         this.partido = partido;
         initComponents();
+        cbGanadorPenales.addItem(new EstructuraPartidos().infoPartido("Local","Grupos",this.partido));
+        cbGanadorPenales.addItem(new EstructuraPartidos().infoPartido("Visita","Grupos",this.partido));
+        if(Datos.partidoActual> partido){
+            tfAdivinanza1.setEditable(false);
+            tfAdivinanza2.setEditable(false);
+            int contador = 0;
+            if (EstructuraPartidos.infoPartido("GanadorAdivinanza","Grupos",this.partido) == EstructuraPartidos.infoPartido("GanadorReal","Grupos",this.partido)){
+                contador += 5;
+            }
+            if(EstructuraPartidos.infoPartido("MarcadorLocalReal","Grupos",this.partido) == Datos.getUsuarioActual().getApuestasGrupos()[partido][0]&&  EstructuraPartidos.infoPartido("MarcadorVisitaReal","Grupos",this.partido)== Datos.getUsuarioActual().getApuestasGrupos()[partido][0]){
+                contador += 5;
+            }
+            lbPuntosObtenidos.setText("+" + Integer.toString(contador));
+        }
+        if(partido> 47){
+            cbGanadorPenales.setVisible(true);
+        }
+        else{
+            cbGanadorPenales.setVisible(false);
+        }
         System.out.println("****");
         System.out.println(EstructuraPartidos.infoPartido("MarcadorVisitaReal","Grupos",Datos.partidoActual));
-        if(EstructuraPartidos.infoPartido("MarcadorVisitaReal","Grupos",this.partido) == "no"){
+        if(EstructuraPartidos.infoPartido("MarcadorVisitaReal","Grupos",this.partido) == null){
             
             this.lbMarcadorReal2.setText("-");
             
         }else{
             this.lbMarcadorReal2.setText(EstructuraPartidos.infoPartido("MarcadorVisitaReal","Grupos",this.partido));
         }
-        if( EstructuraPartidos.infoPartido("MarcadorLocalReal","Grupos",this.partido) == "no"){
+        if( EstructuraPartidos.infoPartido("MarcadorLocalReal","Grupos",this.partido) == null){
             this.lbMarcadorReal1.setText("-");
         }else{
             this.lbMarcadorReal1.setText(EstructuraPartidos.infoPartido("MarcadorLocalReal","Grupos",this.partido));
@@ -78,6 +99,10 @@ public class VentanaApuesta extends javax.swing.JFrame {
         btSubir = new javax.swing.JButton();
         btAleatorio = new javax.swing.JButton();
         btHeuristica = new javax.swing.JButton();
+        cbGanadorPenales = new javax.swing.JComboBox<>();
+        jPanel2 = new javax.swing.JPanel();
+        lbtituloObtenidos = new javax.swing.JLabel();
+        lbPuntosObtenidos = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 0, 0));
 
@@ -166,6 +191,12 @@ public class VentanaApuesta extends javax.swing.JFrame {
             }
         });
 
+        cbGanadorPenales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbGanadorPenalesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -182,9 +213,14 @@ public class VentanaApuesta extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btHeuristica)
                         .addGap(42, 42, 42)
-                        .addComponent(btSubir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                        .addComponent(btAleatorio)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(cbGanadorPenales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btSubir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                                .addComponent(btAleatorio)))))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -220,7 +256,9 @@ public class VentanaApuesta extends javax.swing.JFrame {
                 .addComponent(lbNombre2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbEscudo2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(134, 134, 134)
+                .addGap(2, 2, 2)
+                .addComponent(cbGanadorPenales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(110, 110, 110)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSubir)
                     .addComponent(btAleatorio)
@@ -251,17 +289,49 @@ public class VentanaApuesta extends javax.swing.JFrame {
                     .addContainerGap()))
         );
 
+        jPanel2.setBackground(new java.awt.Color(102, 0, 0));
+
+        lbtituloObtenidos.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        lbtituloObtenidos.setForeground(new java.awt.Color(204, 204, 0));
+        lbtituloObtenidos.setText("Puntos Obtenidos");
+
+        lbPuntosObtenidos.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        lbPuntosObtenidos.setForeground(new java.awt.Color(204, 204, 0));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbtituloObtenidos, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbPuntosObtenidos, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(56, 56, 56))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(lbtituloObtenidos)
+                .addGap(88, 88, 88)
+                .addComponent(lbPuntosObtenidos)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -271,6 +341,7 @@ public class VentanaApuesta extends javax.swing.JFrame {
         Datos.getUsuarioActual().setApuestasGrupos(tfAdivinanza1.getText(), tfAdivinanza2.getText(), partido);
         if(Datos.Admin){
             EstructuraPartidos.actualiceMarcadorReal(tfAdivinanza1.getText(), tfAdivinanza2.getText());
+            Datos.partidoActual += 1;
         }
         setVisible(false);
         dispose();
@@ -292,6 +363,10 @@ public class VentanaApuesta extends javax.swing.JFrame {
         tfAdivinanza1.setText(resultados[0]);
         tfAdivinanza2.setText(resultados[1]);
     }//GEN-LAST:event_btHeuristicaActionPerformed
+
+    private void cbGanadorPenalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGanadorPenalesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbGanadorPenalesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -332,7 +407,9 @@ public class VentanaApuesta extends javax.swing.JFrame {
     private javax.swing.JButton btAleatorio;
     private javax.swing.JButton btHeuristica;
     private javax.swing.JButton btSubir;
+    private javax.swing.JComboBox<String> cbGanadorPenales;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lbEscudo1;
     private javax.swing.JLabel lbEscudo2;
     private javax.swing.JLabel lbEstadio;
@@ -344,6 +421,8 @@ public class VentanaApuesta extends javax.swing.JFrame {
     private javax.swing.JLabel lbMarcadorReal2;
     private javax.swing.JLabel lbNombre1;
     private javax.swing.JLabel lbNombre2;
+    private javax.swing.JLabel lbPuntosObtenidos;
+    private javax.swing.JLabel lbtituloObtenidos;
     private javax.swing.JTextField tfAdivinanza1;
     private javax.swing.JTextField tfAdivinanza2;
     // End of variables declaration//GEN-END:variables

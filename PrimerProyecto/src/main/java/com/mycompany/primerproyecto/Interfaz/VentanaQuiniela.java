@@ -37,8 +37,6 @@ public class VentanaQuiniela extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btGuardar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         btGrupos.setText("Grupos");
         btGrupos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,10 +45,25 @@ public class VentanaQuiniela extends javax.swing.JFrame {
         });
 
         btOctavos.setText("Octavos");
+        btOctavos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btOctavosActionPerformed(evt);
+            }
+        });
 
         btCuartos.setText("Cuartos");
+        btCuartos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCuartosActionPerformed(evt);
+            }
+        });
 
         btSemifinales.setText("Semifinales");
+        btSemifinales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSemifinalesActionPerformed(evt);
+            }
+        });
 
         btTercerCuarto.setText("Tercero y Cuarto");
         btTercerCuarto.addActionListener(new java.awt.event.ActionListener() {
@@ -60,6 +73,11 @@ public class VentanaQuiniela extends javax.swing.JFrame {
         });
 
         btFinales.setText("Finales");
+        btFinales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFinalesActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Nombre");
 
@@ -123,7 +141,7 @@ public class VentanaQuiniela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btTercerCuartoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTercerCuartoActionPerformed
-        // TODO add your handling code here:
+        new VentanaTerceroCuarto().setVisible(true);
     }//GEN-LAST:event_btTercerCuartoActionPerformed
 
     private void btGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGruposActionPerformed
@@ -133,6 +151,22 @@ public class VentanaQuiniela extends javax.swing.JFrame {
     private void btGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuardarActionPerformed
         Funciones.GuardarQuinielas();
     }//GEN-LAST:event_btGuardarActionPerformed
+
+    private void btOctavosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOctavosActionPerformed
+        new VentanaOctavos().setVisible(true);
+    }//GEN-LAST:event_btOctavosActionPerformed
+
+    private void btCuartosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCuartosActionPerformed
+        new VentanaCuartos().setVisible(true);
+    }//GEN-LAST:event_btCuartosActionPerformed
+
+    private void btSemifinalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSemifinalesActionPerformed
+        new VentanaSemifinales().setVisible(true);
+    }//GEN-LAST:event_btSemifinalesActionPerformed
+
+    private void btFinalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFinalesActionPerformed
+        new VentanaFinal().setVisible(true);
+    }//GEN-LAST:event_btFinalesActionPerformed
 
     /**
      * @param args the command line arguments

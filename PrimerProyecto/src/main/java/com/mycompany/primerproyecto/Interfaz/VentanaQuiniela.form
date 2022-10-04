@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
-  </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
@@ -96,16 +93,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Octavos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btOctavosActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btCuartos">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cuartos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCuartosActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btSemifinales">
       <Properties>
         <Property name="text" type="java.lang.String" value="Semifinales"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSemifinalesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btTercerCuarto">
       <Properties>
@@ -119,6 +125,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Finales"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btFinalesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>

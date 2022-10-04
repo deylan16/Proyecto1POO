@@ -126,8 +126,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 new VentanaAdmin().setVisible(true);
             }else if(verificacion >= 0){
                     this.lbAdvertencia.setText("Ingresando");
+                    Datos.Admin = false;
                     new VentanaQuiniela().setVisible(true);
                 }else if(verificacion == -1){
+                    Datos.Admin = false;
                     this.lbAdvertencia.setText("Creando Usuario");
                     new VentanaQuiniela().setVisible(true);
                 }else if(verificacion == -2){

@@ -31,8 +31,6 @@ public class VentanaAdmin extends javax.swing.JFrame {
 
         btCargarSiguientePartido = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         btCargarSiguientePartido.setText("Cargar Siguiente partido");
         btCargarSiguientePartido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
