@@ -12,7 +12,9 @@ import java.util.ArrayList;
  */
 public class Equipo {
     private int puntos;
-    private int golesAfavor;
+    private int golesAfavor;    
+    private int diferencia_de_goles;
+
     private int golesEncontra;
     private String nombre;
     private int puntuacion;
@@ -28,6 +30,10 @@ public class Equipo {
         return puntos;
     }
 
+    public int getDiferencia_de_goles() {
+        return diferencia_de_goles;
+    }
+
     public void setPuntos(int puntos) {
         this.puntos = puntos;
     }
@@ -35,18 +41,23 @@ public class Equipo {
     public int getGolesAfavor() {
         return golesAfavor;
     }
-
+    
     public void setGolesAfavor(int golesAfavor) {
+        this.diferencia_de_goles += golesAfavor;
         this.golesAfavor = golesAfavor;
     }
+
 
     public int getGolesEncontra() {
         return golesEncontra;
     }
 
+
     public void setGolesEncontra(int golesEncontra) {
+        this.diferencia_de_goles -= golesEncontra;
         this.golesEncontra = golesEncontra;
     }
+
 
     public int getPuntuacion() {
         return puntuacion;
@@ -72,6 +83,11 @@ public class Equipo {
         this.nombre = nombre;
     }
     
+    public void tostring(){
+        System.out.println(nombre+": \n"+ "Goles a favor: "+ golesAfavor+"\n"+ "Goles en contra: "+
+                golesEncontra +"\n"+ "Puntos actuales: "+ puntos);
+        
+    }
     
     
 }
