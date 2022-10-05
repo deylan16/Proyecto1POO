@@ -25,7 +25,7 @@ public class EstructuraPartidos {
     }
     
     
-    public Equipo buscaEquipo(String equipo){
+    public static Equipo buscaEquipo(String equipo){
         for (Object equipo2:equipos) {
             Equipo equipo3 = (Equipo)equipo2;
             if(equipo3.getNombre().equals(equipo)){
@@ -65,6 +65,9 @@ public class EstructuraPartidos {
             else if(opcion == "Estadio"){
                 return demePartidoEquipo(Ipartido).getEstadio();               
               } 
+            else if(opcion == "GanadorPenales"){
+                return demePartidoEquipo(Ipartido).getGanadorPorEmpate();               
+              } 
             else if(opcion == "MarcadorVisitaReal"){
                 
                 return Integer.toString(demePartidoEquipo(Ipartido).getMarcadorVisitaReal());               
@@ -74,7 +77,10 @@ public class EstructuraPartidos {
               } 
             else if(opcion == "GanadorReal"){
                 return demePartidoEquipo(Ipartido).getGanadorReal().getNombre();               
-            } 
+            }
+            else if(opcion == "PerdedorReal"){
+                return demePartidoEquipo(Ipartido).getPerdedorReal().getNombre();               
+            }
             else if(opcion == "GanadorAdivinanza"){
                 if (Datos.getUsuarioActual().getApuestasGrupos()[Ipartido][0] == Datos.getUsuarioActual().getApuestasGrupos()[Ipartido][1]) return null;
         
@@ -504,6 +510,7 @@ public class EstructuraPartidos {
             //Se almacena el puntaje de cada equipo en caos de empate(1pts)
             partidosFaseGrupos.get(Datos.partidoActual).getVisita().setPuntos(puntaje_actual_visita+1);
             partidosFaseGrupos.get(Datos.partidoActual).getLocal().setPuntos(puntaje_actual_local+1);
+            
         }
         if (marcador_local > (marcador_visita)){//En caso de que local sea el ganador
             //Se almacena el puntaje para el equipo local (ganador)(3pts)
@@ -525,5 +532,14 @@ public class EstructuraPartidos {
     return 0;
     }
     
-    
+    public static void actualiceEquiposPartido(int Ipartido,String local,String Visita){
+        
+        partidosFaseGrupos.get(Ipartido).setLocal(buscaEquipo(local));
+        partidosFaseGrupos.get(Ipartido).setVisita(buscaEquipo(Visita));
+    }
+    public static void actualiceEmpatePartido(int Ipartido,String ganadorEmpate){
+        
+        partidosFaseGrupos.get(Ipartido).setGanadorPorEmpate(ganadorEmpate);
+    }
+        
 }

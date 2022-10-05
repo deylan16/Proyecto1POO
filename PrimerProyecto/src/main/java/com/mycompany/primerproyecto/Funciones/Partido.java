@@ -18,6 +18,7 @@ class Partido {
     private String fecha;
     private String hora;
     private String estadio;
+    private String ganadorPorEmpate;
     
     public Partido(Equipo local, Equipo visita, int marcadorLocal, int marcadorVisita) {
         this.local = local;
@@ -63,7 +64,17 @@ class Partido {
     
     //Se revisan los maracdores reales para definir cual fue el equipo perdedor 
     public Equipo getPerdedor(){
-        if (marcadorLocalReal == marcadorVisitaReal) return null;
+        if (marcadorLocalReal == marcadorVisitaReal){
+            if(ganadorPorEmpate != null){
+                if(ganadorPorEmpate.equals(local.getNombre())){
+                return visita;
+            }
+                return local;
+            }
+            return new Equipo("Empate", 0);
+            
+            
+        }
         
         if (marcadorLocalReal > marcadorVisitaReal)
             return visita;
@@ -72,7 +83,14 @@ class Partido {
     
     public Equipo getGanador(){
         if (marcadorLocalReal == marcadorVisitaReal) {
-            return null;
+            if(ganadorPorEmpate != null){
+               if(ganadorPorEmpate.equals(local.getNombre())){
+                return local;
+                }
+                return visita; 
+            }
+            
+            return new Equipo("Empate", 0);
         }
         
         if (marcadorLocalReal > marcadorVisitaReal)
@@ -80,20 +98,44 @@ class Partido {
         return visita;
     }
     public Equipo getGanadorAdivinanza(){
-        if (marcadorLocal == marcadorVisita) return null;
+        if (marcadorLocal == marcadorVisita){
+            return null;
+        }
         
         if (marcadorLocal > marcadorVisita)
             return local;
         return visita;
     }
     public Equipo getGanadorReal(){
-        if (marcadorLocalReal == marcadorVisitaReal) return null;
+        if (marcadorLocalReal == marcadorVisitaReal){
+            if(ganadorPorEmpate != null){
+               if(ganadorPorEmpate.equals(local.getNombre())){
+                return local;
+                }
+                return visita; 
+            }
+            
+        }
         
         if (marcadorLocalReal > marcadorVisitaReal)
             return local;
         return visita;
     }
-    
+    public Equipo getPerdedorReal(){
+        if (marcadorLocalReal == marcadorVisitaReal){
+            if(ganadorPorEmpate != null){
+               if(ganadorPorEmpate.equals(local.getNombre())){
+                return visita;
+                }
+                return local; 
+            }
+            
+        }
+        
+        if (marcadorLocalReal > marcadorVisitaReal)
+            return visita;
+        return local;
+    }
     public boolean estaEmpatado(){
         return marcadorLocal == marcadorVisita;
     }
@@ -170,6 +212,14 @@ class Partido {
         this.estadio = estadio;
     }
 
+    public String getGanadorPorEmpate() {
+        return ganadorPorEmpate;
+    }
+
+    public void setGanadorPorEmpate(String ganadorPorEmpate) {
+        this.ganadorPorEmpate = ganadorPorEmpate;
+    }
+    
    
     
 }

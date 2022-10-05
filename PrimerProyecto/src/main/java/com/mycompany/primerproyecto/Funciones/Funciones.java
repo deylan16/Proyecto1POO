@@ -79,6 +79,21 @@ public class Funciones {
                 datos += ",";
                 
             }
+            
+            datos += "&";
+            int Empates[] = usuario.getGanadoresEmpate();
+            for (int i = 0; i < Empates.length; i++) {
+                String Marcador = "";
+                if(0 == Empates[i]){
+                    Marcador += "0";
+                }else{
+                    Marcador += Empates[i];
+                }
+                
+                datos += Marcador;
+                datos += ",";
+                
+            }
             datos += "%";
             
         }
@@ -110,7 +125,12 @@ public class Funciones {
                         ingresando.setApuestasGrupos(marcador[0], marcador[1], j);
 
                     }
+                    String empates[] = fragmentos[4].split(",");
+                    for (int j = 0; j < empates.length; j++) {
+                        String[] marcador = empates[j].split("/");
+                        ingresando.setGanadoresEmpate(Integer.parseInt(marcador[0]), j);
 
+                    }
                     Datos.getUsuarios().add(ingresando);
                     System.out.println(ingresando.getApuestasGrupos()[0][0]);
                     

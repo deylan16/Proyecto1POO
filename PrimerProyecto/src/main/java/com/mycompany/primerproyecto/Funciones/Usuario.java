@@ -13,12 +13,14 @@ public class Usuario {
     private String Nombre;
     private String Contraseña;
     private String ApuestasGrupos[][];
+    private int ganadoresEmpate[];
 
     public Usuario(String Usuario, String Nombre, String Contraseña) {
         this.Usuario = Usuario;
         this.Nombre = Nombre;
         this.Contraseña = Contraseña;
         this.ApuestasGrupos = new String[62][2];
+        this.ganadoresEmpate = new int[62];
     }
 
     public String[][] getApuestasGrupos() {
@@ -29,6 +31,18 @@ public class Usuario {
         this.ApuestasGrupos[partido][0] = marcador1;
         this.ApuestasGrupos[partido][1] = marcador2;
     }
+
+    public int[] getGanadoresEmpate() {
+        return ganadoresEmpate;
+    }
+    public int getGanadoresEmpateIndex(int i) {
+        return ganadoresEmpate[i];
+    }
+
+    public void setGanadoresEmpate(int ganador,int partido) {
+        this.ganadoresEmpate[partido] = ganador;
+    }
+    
     
 
     public String getUsuario() {

@@ -282,7 +282,7 @@ public class VentanaCuartos extends javax.swing.JFrame {
     }//GEN-LAST:event_btApostarPartido59ActionPerformed
 
     private void btApostarPartido60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApostarPartido60ActionPerformed
-        new VentanaApuesta(69).setVisible(true);
+        new VentanaApuesta(59).setVisible(true);
     }//GEN-LAST:event_btApostarPartido60ActionPerformed
 
     /**
