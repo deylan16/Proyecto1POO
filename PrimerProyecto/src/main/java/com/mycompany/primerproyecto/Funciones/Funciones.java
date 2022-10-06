@@ -87,7 +87,7 @@ public class Funciones {
                 if(0 == Empates[i]){
                     Marcador += "0";
                 }else{
-                    Marcador += Empates[i];
+                    Marcador += "1";
                 }
                 
                 datos += Marcador;
@@ -127,8 +127,8 @@ public class Funciones {
                     }
                     String empates[] = fragmentos[4].split(",");
                     for (int j = 0; j < empates.length; j++) {
-                        String[] marcador = empates[j].split("/");
-                        ingresando.setGanadoresEmpate(Integer.parseInt(marcador[0]), j);
+                        //String[] marcador = empates[j];
+                        ingresando.setGanadoresEmpate(Integer.parseInt(empates[j]), j);
 
                     }
                     Datos.getUsuarios().add(ingresando);

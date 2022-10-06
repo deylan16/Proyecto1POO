@@ -29,6 +29,7 @@ public class VentanaApuesta extends javax.swing.JFrame {
         initComponents();
         cbGanadorPenales.addItem(new EstructuraPartidos().infoPartido("Local","Grupos",this.partido));
         cbGanadorPenales.addItem(new EstructuraPartidos().infoPartido("Visita","Grupos",this.partido));
+        cbGanadorPenales.setSelectedIndex(Datos.getUsuarioActual().getGanadoresEmpateIndex(partido));
         if(Datos.partidoActual> partido){
             tfAdivinanza1.setEditable(false);
             tfAdivinanza2.setEditable(false);
