@@ -6,6 +6,7 @@ package com.mycompany.primerproyecto.Interfaz;
 
 import com.mycompany.primerproyecto.Funciones.Datos;
 import com.mycompany.primerproyecto.Funciones.Funciones;
+import static com.mycompany.primerproyecto.Interfaz.VentanaQuiniela.lst_ranking;
 
 /**
  *
@@ -20,6 +21,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     public VentanaPrincipal() {
         Funciones.cargarQuinielas();
+              //  new Ranking().setVisible(true);
+
         initComponents();
     }
 
@@ -128,10 +131,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     this.lbAdvertencia.setText("Ingresando");
                     Datos.Admin = false;
                     new VentanaQuiniela().setVisible(true);
+                    //______________________________________________________________________________________________
+            lst_ranking.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = Datos.to_string_nombres_puntos();
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }});
+                    //______________________________________________________________________________________________
                 }else if(verificacion == -1){
                     Datos.Admin = false;
                     this.lbAdvertencia.setText("Creando Usuario");
                     new VentanaQuiniela().setVisible(true);
+            lst_ranking.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = Datos.to_string_nombres_puntos();
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }});
+                    //______________________________________________________________________________________________
+                
                 }else if(verificacion == -2){
                 this.lbAdvertencia.setText("Datos Incorrectos");
             }

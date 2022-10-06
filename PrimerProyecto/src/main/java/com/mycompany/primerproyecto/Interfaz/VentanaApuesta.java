@@ -18,7 +18,7 @@ import javax.swing.SpinnerDateModel;
  */
 public class VentanaApuesta extends javax.swing.JFrame {
     public int partido;
-    public String ruta = "C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\";
+    public String ruta = "C:\\Users\\jecheverria\\Desktop\\escudos";
     /**
      * Creates new form VentanaApuesta
      */

@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.primerproyecto.Funciones;
-
+import java.lang.String;
 import java.util.ArrayList;
 
 /**
@@ -15,7 +15,7 @@ public class Datos {
     static public Usuario usuarioAdmin;
     static public int partidoActual = 0;
     static public boolean Admin = false;
-
+    static public int progreso;
     private static ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
     
 
@@ -45,8 +45,30 @@ public class Datos {
     }
     
     
-
- 
+public static void ordenar_usuarios_puntos(){
+    int len = usuarios.size();
+    for (var i = 0; i < len ; i++) {
+            for(var j = 0 ; j < len - i - 1; j++){
+                if (usuarios.get(j).getPuntos()< usuarios.get(j + 1).getPuntos()) { 
+                    Usuario temp = usuarios.get(j);
+                    usuarios.set(j, usuarios.get(j+1));
+                    usuarios.set(j + 1, temp);
+        }
+       }
+      }
+}
+ public static String[] to_string_nombres_puntos(){
+    ordenar_usuarios_puntos();
+    String nombres_puntos[]=new String[usuarios.size()];
+    int contador = 0;
+    for (Usuario usuario:usuarios){
+       nombres_puntos [contador] = contador+1 + " "+usuario.getNombre()+ (char)9 + usuario.getPuntos();
+       contador++;
+    } 
+                
+    return nombres_puntos;
+     
+ }
  
     
 }

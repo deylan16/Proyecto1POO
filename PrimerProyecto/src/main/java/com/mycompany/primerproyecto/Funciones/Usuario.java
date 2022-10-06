@@ -12,8 +12,12 @@ public class Usuario {
     private String Usuario;
     private String Nombre;
     private String Contraseña;
+    private int puntos;
     private String ApuestasGrupos[][];
     private int ganadoresEmpate[];
+
+    
+    public Usuario() {}
 
     public Usuario(String Usuario, String Nombre, String Contraseña) {
         this.Usuario = Usuario;
@@ -25,6 +29,9 @@ public class Usuario {
 
     public String[][] getApuestasGrupos() {
         return ApuestasGrupos;
+    }
+    public int getPuntos(){
+        return this.puntos;
     }
 
     public void setApuestasGrupos(String marcador1,String marcador2,int partido) {
@@ -42,7 +49,9 @@ public class Usuario {
     public void setGanadoresEmpate(int ganador,int partido) {
         this.ganadoresEmpate[partido] = ganador;
     }
-    
+    public void setPuntos(int P){
+        this.puntos = P;
+    }
     
 
     public String getUsuario() {

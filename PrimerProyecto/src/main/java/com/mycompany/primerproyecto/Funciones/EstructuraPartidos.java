@@ -108,7 +108,7 @@ public class EstructuraPartidos {
       else
         return dos;
     } 
-    //Funciin que busca el partido en que ambos equipos jugaron
+    //Funcion que busca el partido en que ambos equipos jugaron
     //Retorna el equipo ganador de tal partido
     public Equipo equipo_ganador(Equipo uno, Equipo dos){
        for(Partido partido : partidosFaseGrupos){
@@ -127,6 +127,7 @@ public class EstructuraPartidos {
         }
        return null;
    } 
+
     //Funcion que retorna el equipo con mayor diferencia de goles positiva
     public Equipo equipo_dif_goles_pos(Equipo uno, Equipo dos){
         //Si tienen la misma diferencia de goles 
@@ -247,7 +248,6 @@ public class EstructuraPartidos {
         
       
       int len = equipos.size();
-    
       for (var i = 0; i < len ; i++) {
         for(var j = 0 ; j < len - i - 1; j++){
                         
@@ -528,6 +528,8 @@ public class EstructuraPartidos {
 
         System.out.println("El perdedor es: \n");
         partidosFaseGrupos.get(Datos.partidoActual).getPerdedor().tostring();
+        
+        
         
     return 0;
     }
