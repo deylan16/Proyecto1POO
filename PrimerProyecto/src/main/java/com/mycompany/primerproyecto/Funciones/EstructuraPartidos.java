@@ -4,6 +4,7 @@
  */
 package com.mycompany.primerproyecto.Funciones;
 
+import com.mycompany.primerproyecto.Interfaz.VentanaQuiniela;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -356,7 +357,7 @@ public class EstructuraPartidos {
     }
     
     
-    public void iniciaFaseGrupos(){
+    public static void iniciaFaseGrupos(){
         equipos.removeAll(equipos);
         equipos.add(new Equipo("Qatar",1441)); 
         equipos.add( new Equipo("Ecuador",1463)); 
@@ -479,6 +480,13 @@ public class EstructuraPartidos {
         
         
     }
+    public static String ganadorApuestaUsuario(Usuario usuario){
+        if (usuario.getApuestasGrupos()[Datos.partidoActual][0] == usuario.getApuestasGrupos()[Datos.partidoActual][1]) return null;
+        
+        if (Integer.parseInt(usuario.getApuestasGrupos()[Datos.partidoActual][0]) > Integer.parseInt(usuario.getApuestasGrupos()[Datos.partidoActual][1]))
+            return demePartidoEquipo(Datos.partidoActual).getLocal().getNombre();
+        return demePartidoEquipo(Datos.partidoActual).getVisita().getNombre();
+    }
     
     //Se cambia el tipo de funcion para hacer validaciones y retornar int en caso de errores 
     static public int actualiceMarcadorReal(String Marcador1,String marcador2){
@@ -528,6 +536,29 @@ public class EstructuraPartidos {
 
         System.out.println("El perdedor es: \n");
         partidosFaseGrupos.get(Datos.partidoActual).getPerdedor().tostring();
+        
+        for (Object Usuario2 : Datos.getUsuarios()) {
+            Usuario usuario= (Usuario)(Usuario2);
+            if(!"-".equals(usuario.getApuestasGrupos()[Datos.partidoActual][0]) && !"-".equals(usuario.getApuestasGrupos()[Datos.partidoActual][1])){
+                int contador = 0;
+                System.out.println("holka");
+                if (ganadorApuestaUsuario(usuario).equals(infoPartido("GanadorReal","Grupos",Datos.partidoActual))){
+                    System.out.println("holka1");
+                    contador += 5;
+                }
+                String reallocal = infoPartido("MarcadorLocalReal","Grupos",Datos.partidoActual);
+                String realvisita = infoPartido("MarcadorVisitaReal","Grupos",Datos.partidoActual);
+                if(reallocal.equals(usuario.getApuestasGrupos()[Datos.partidoActual][0])&&  realvisita.equals(usuario.getApuestasGrupos()[Datos.partidoActual][1])){
+                    System.out.println("holka2");
+                    contador += 5;
+                }
+                usuario.setPuntos(usuario.getPuntos()+ contador);
+            }
+        
+         
+            
+            
+        }
         
         
         

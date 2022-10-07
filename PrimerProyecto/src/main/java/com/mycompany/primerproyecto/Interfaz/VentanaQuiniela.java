@@ -19,6 +19,7 @@ public class VentanaQuiniela extends javax.swing.JFrame {
      */
     public VentanaQuiniela() {
         initComponents();
+        pgb_progreso_mundial.setValue(Datos.partidoActual);
     }
 
     /**
@@ -249,9 +250,9 @@ public class VentanaQuiniela extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_actulizaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-Datos.partidoActual++;
+    //Datos.partidoActual++;
 
-pgb_progreso_mundial.setValue(Datos.partidoActual);
+    pgb_progreso_mundial.setValue(Datos.partidoActual);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

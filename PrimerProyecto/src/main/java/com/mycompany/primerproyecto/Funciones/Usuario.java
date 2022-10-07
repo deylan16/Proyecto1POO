@@ -15,6 +15,7 @@ public class Usuario {
     private int puntos;
     private String ApuestasGrupos[][];
     private int ganadoresEmpate[];
+    private int partidoSumado[];
 
     
     public Usuario() {}
@@ -25,6 +26,7 @@ public class Usuario {
         this.Contraseña = Contraseña;
         this.ApuestasGrupos = new String[62][2];
         this.ganadoresEmpate = new int[62];
+        this.partidoSumado = new int[62];
     }
 
     public String[][] getApuestasGrupos() {

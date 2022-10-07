@@ -6,6 +6,9 @@ package com.mycompany.primerproyecto.Interfaz;
 
 import com.mycompany.primerproyecto.Funciones.Datos;
 import com.mycompany.primerproyecto.Funciones.EstructuraPartidos;
+import static com.mycompany.primerproyecto.Funciones.EstructuraPartidos.ganadorApuestaUsuario;
+import static com.mycompany.primerproyecto.Funciones.EstructuraPartidos.infoPartido;
+import com.mycompany.primerproyecto.Funciones.Usuario;
 
 /**
  *
@@ -30,6 +33,7 @@ public class VentanaAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         btCargarSiguientePartido = new javax.swing.JButton();
+        btReiniciar = new javax.swing.JButton();
 
         btCargarSiguientePartido.setText("Cargar Siguiente partido");
         btCargarSiguientePartido.addActionListener(new java.awt.event.ActionListener() {
@@ -38,12 +42,21 @@ public class VentanaAdmin extends javax.swing.JFrame {
             }
         });
 
+        btReiniciar.setText("Reiniciar");
+        btReiniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btReiniciarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(167, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
+                .addComponent(btReiniciar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(btCargarSiguientePartido)
                 .addGap(141, 141, 141))
         );
@@ -51,7 +64,9 @@ public class VentanaAdmin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(526, Short.MAX_VALUE)
-                .addComponent(btCargarSiguientePartido)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btCargarSiguientePartido)
+                    .addComponent(btReiniciar))
                 .addContainerGap())
         );
 
@@ -64,6 +79,20 @@ public class VentanaAdmin extends javax.swing.JFrame {
         System.out.println(EstructuraPartidos.infoPartido("MarcadorVisitaReal","Grupos",Datos.partidoActual));
         new VentanaApuesta(Datos.partidoActual).setVisible(true);
     }//GEN-LAST:event_btCargarSiguientePartidoActionPerformed
+
+    private void btReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btReiniciarActionPerformed
+        EstructuraPartidos.iniciaFaseGrupos();
+        Datos.partidoActual = 0;
+        for (Object Usuario2 : Datos.getUsuarios()) {
+            Usuario usuario= (Usuario)(Usuario2);
+            usuario.setPuntos(0);
+            
+        
+         
+            
+            
+        }
+    }//GEN-LAST:event_btReiniciarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,5 +131,6 @@ public class VentanaAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCargarSiguientePartido;
+    private javax.swing.JButton btReiniciar;
     // End of variables declaration//GEN-END:variables
 }
