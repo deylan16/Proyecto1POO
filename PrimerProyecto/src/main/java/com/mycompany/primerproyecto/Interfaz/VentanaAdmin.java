@@ -88,7 +88,7 @@ public class VentanaAdmin extends javax.swing.JFrame {
     private void btCargarSiguientePartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCargarSiguientePartidoActionPerformed
         System.out.println("****");
         
-        System.out.println(EstructuraPartidos.infoPartido("MarcadorVisitaReal","Grupos",Datos.partidoActual));
+        //System.out.println(EstructuraPartidos.infoPartido("MarcadorVisitaReal","Grupos",Datos.partidoActual));
         new VentanaApuesta(Datos.partidoActual).setVisible(true);
     }//GEN-LAST:event_btCargarSiguientePartidoActionPerformed
 

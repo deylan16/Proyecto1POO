@@ -26,7 +26,7 @@ public class VentanaApuesta extends javax.swing.JFrame {
        
         
         this.partido = partido;
-        if (partido > 63){
+        if (partido >= 63){
             this.partido = 63;
             partido = 63;
         }
