@@ -26,6 +26,10 @@ public class VentanaApuesta extends javax.swing.JFrame {
        
         
         this.partido = partido;
+        if (partido > 63){
+            this.partido = 63;
+            partido = 63;
+        }
         initComponents();
         cbGanadorPenales.addItem(new EstructuraPartidos().infoPartido("Local","Grupos",this.partido));
         cbGanadorPenales.addItem(new EstructuraPartidos().infoPartido("Visita","Grupos",this.partido));
@@ -77,7 +81,7 @@ public class VentanaApuesta extends javax.swing.JFrame {
             cbGanadorPenales.setVisible(false);
         }
         System.out.println("****");
-        System.out.println(EstructuraPartidos.infoPartido("MarcadorVisitaReal","Grupos",Datos.partidoActual));
+        System.out.println(EstructuraPartidos.infoPartido("MarcadorVisitaReal","Grupos",this.partido));
         if(EstructuraPartidos.infoPartido("MarcadorVisitaReal","Grupos",this.partido) == null){
             
             this.lbMarcadorReal2.setText("-");

@@ -23,9 +23,11 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="btReiniciar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="58" max="32767" attributes="0"/>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
               <Component id="btCargarSiguientePartido" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="btAutomatico" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -36,6 +38,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btCargarSiguientePartido" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btReiniciar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btAutomatico" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -57,6 +60,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btReiniciarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btAutomatico">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Automatico"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAutomaticoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

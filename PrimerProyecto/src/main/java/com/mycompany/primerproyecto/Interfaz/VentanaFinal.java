@@ -34,8 +34,6 @@ public class VentanaFinal extends javax.swing.JFrame {
         lbEscudo1Partido64 = new javax.swing.JLabel();
         btApostarPartido64 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         pnl21Nov.setBackground(new java.awt.Color(0, 102, 0));
 
         pnlPartido64.setBackground(new java.awt.Color(204, 204, 0));

@@ -24,9 +24,9 @@ public class Usuario {
         this.Usuario = Usuario;
         this.Nombre = Nombre;
         this.Contraseña = Contraseña;
-        this.ApuestasGrupos = new String[62][2];
-        this.ganadoresEmpate = new int[62];
-        this.partidoSumado = new int[62];
+        this.ApuestasGrupos = new String[64][2];
+        this.ganadoresEmpate = new int[64];
+        this.partidoSumado = new int[64];
     }
 
     public String[][] getApuestasGrupos() {

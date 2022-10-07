@@ -5,6 +5,8 @@
 package com.mycompany.primerproyecto.Funciones;
 
 import com.mycompany.primerproyecto.Interfaz.VentanaQuiniela;
+import static com.mycompany.primerproyecto.Interfaz.VentanaQuiniela.lst_ranking;
+import static com.mycompany.primerproyecto.Interfaz.VentanaQuiniela.pgb_progreso_mundial;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -481,7 +483,10 @@ public class EstructuraPartidos {
         
     }
     public static String ganadorApuestaUsuario(Usuario usuario){
-        if (usuario.getApuestasGrupos()[Datos.partidoActual][0] == usuario.getApuestasGrupos()[Datos.partidoActual][1]) return null;
+        if (usuario.getApuestasGrupos()[Datos.partidoActual][0] == usuario.getApuestasGrupos()[Datos.partidoActual][1]){
+            return demePartidoEquipo(Datos.partidoActual).getVisita().getNombre();
+            //return null;
+        }
         
         if (Integer.parseInt(usuario.getApuestasGrupos()[Datos.partidoActual][0]) > Integer.parseInt(usuario.getApuestasGrupos()[Datos.partidoActual][1]))
             return demePartidoEquipo(Datos.partidoActual).getLocal().getNombre();
@@ -499,7 +504,10 @@ public class EstructuraPartidos {
             
             return -1;
         }
+        System.out.println("*******************");
+        System.out.println(Datos.partidoActual);
         
+        System.out.println("*******************");
         int marcador_local = Integer.parseInt(Marcador1);
         int marcador_visita = Integer.parseInt(marcador2);
         partidosFaseGrupos.get(Datos.partidoActual).setMarcadorLocalReal(marcador_local);
@@ -558,6 +566,15 @@ public class EstructuraPartidos {
          
             
             
+        }
+        if(VentanaQuiniela.pgb_progreso_mundial != null){
+            System.out.println("hfdyugfygeygfy");
+            VentanaQuiniela.pgb_progreso_mundial.setValue(Datos.partidoActual);
+            lst_ranking.setModel(new javax.swing.AbstractListModel<String>() {
+                String[] strings = Datos.to_string_nombres_puntos();
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }});
+        
         }
         
         
