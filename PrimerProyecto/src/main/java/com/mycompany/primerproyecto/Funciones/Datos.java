@@ -61,8 +61,14 @@ public static void ordenar_usuarios_puntos(){
     ordenar_usuarios_puntos();
     String nombres_puntos[]=new String[usuarios.size()];
     int contador = 0;
+    	        char espacio = (char)9;
+
     for (Usuario usuario:usuarios){
-       nombres_puntos [contador] = contador+1 + " "+usuario.getNombre()+ (char)9 + usuario.getPuntos();
+       if (usuario.getNombre().length() < 15)
+       nombres_puntos [contador] = contador+1 + " "+usuario.getNombre()+ " - " + usuario.getPuntos()+"pts";
+       else
+                  nombres_puntos [contador] = contador+1 + " "+usuario.getNombre().substring(0, 11)+ "..."+" - " + usuario.getPuntos()+"pts";
+
        contador++;
     } 
                 
