@@ -547,28 +547,21 @@ public class EstructuraPartidos {
         
         for (Object Usuario2 : Datos.getUsuarios()) {
             Usuario usuario= (Usuario)(Usuario2);
-            if(!"-".equals(usuario.getApuestasGrupos()[Datos.partidoActual][0]) && !"-".equals(usuario.getApuestasGrupos()[Datos.partidoActual][1])){
+            if(!(null == usuario.getApuestasGrupos()[Datos.partidoActual][1]) && !"-".equals(usuario.getApuestasGrupos()[Datos.partidoActual][0]) && !"-".equals(usuario.getApuestasGrupos()[Datos.partidoActual][1]) &&
+                    !(null == usuario.getApuestasGrupos()[Datos.partidoActual][0])){
                 int contador = 0;
-                System.out.println("holka");
                 if (ganadorApuestaUsuario(usuario).equals(infoPartido("GanadorReal","Grupos",Datos.partidoActual))){
-                    System.out.println("holka1");
                     contador += 5;
                 }
                 String reallocal = infoPartido("MarcadorLocalReal","Grupos",Datos.partidoActual);
                 String realvisita = infoPartido("MarcadorVisitaReal","Grupos",Datos.partidoActual);
                 if(reallocal.equals(usuario.getApuestasGrupos()[Datos.partidoActual][0])&&  realvisita.equals(usuario.getApuestasGrupos()[Datos.partidoActual][1])){
-                    System.out.println("holka2");
                     contador += 5;
                 }
                 usuario.setPuntos(usuario.getPuntos()+ contador);
             }
-        
-         
-            
-            
         }
         if(VentanaQuiniela.pgb_progreso_mundial != null){
-            System.out.println("hfdyugfygeygfy");
             VentanaQuiniela.pgb_progreso_mundial.setValue(Datos.partidoActual);
             lst_ranking.setModel(new javax.swing.AbstractListModel<String>() {
                 String[] strings = Datos.to_string_nombres_puntos();

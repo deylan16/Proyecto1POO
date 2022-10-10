@@ -45,8 +45,6 @@ public class VentanaQuiniela extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lst_ranking = new javax.swing.JList<>();
-        btn_actuliza = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
 
         btGrupos.setText("Grupos");
         btGrupos.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +99,7 @@ public class VentanaQuiniela extends javax.swing.JFrame {
 
         lbl_ranking.setText("Ranking");
 
-        pgb_progreso_mundial.setMaximum(64);
+        pgb_progreso_mundial.setMaximum(63);
 
         jLabel3.setText("Progreso de Mundial");
 
@@ -111,20 +109,6 @@ public class VentanaQuiniela extends javax.swing.JFrame {
             public String getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(lst_ranking);
-
-        btn_actuliza.setText("Actualizar Ranking");
-        btn_actuliza.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_actulizaActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Juega Partido");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,25 +139,20 @@ public class VentanaQuiniela extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(btFinales))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(47, 47, 47)
                                         .addComponent(lbl_ranking)
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel2))
-                                    .addComponent(btn_actuliza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane1))
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(31, 31, 31)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(pgb_progreso_mundial, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                                        .addGap(18, 18, 18))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel3)
-                                            .addComponent(jButton1))
-                                        .addGap(0, 0, Short.MAX_VALUE)))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jLabel3)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(pgb_progreso_mundial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,14 +168,9 @@ public class VentanaQuiniela extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(pgb_progreso_mundial, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)
-                        .addComponent(jButton1))
+                    .addComponent(pgb_progreso_mundial, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btn_actuliza)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btGrupos)
@@ -240,21 +214,6 @@ public class VentanaQuiniela extends javax.swing.JFrame {
     private void btFinalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFinalesActionPerformed
         new VentanaFinal().setVisible(true);
     }//GEN-LAST:event_btFinalesActionPerformed
-
-    private void btn_actulizaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actulizaActionPerformed
-                      lst_ranking.setModel(new javax.swing.AbstractListModel<String>() {
-                String[] strings = Datos.to_string_nombres_puntos();
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }});
-        
-    }//GEN-LAST:event_btn_actulizaActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    //Datos.partidoActual++;
-
-    pgb_progreso_mundial.setValue(Datos.partidoActual);
-
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments});
@@ -301,8 +260,6 @@ public class VentanaQuiniela extends javax.swing.JFrame {
     private javax.swing.JButton btOctavos;
     private javax.swing.JButton btSemifinales;
     private javax.swing.JButton btTercerCuarto;
-    private javax.swing.JButton btn_actuliza;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

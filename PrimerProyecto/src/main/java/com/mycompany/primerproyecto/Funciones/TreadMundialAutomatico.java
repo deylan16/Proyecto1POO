@@ -35,7 +35,7 @@ public class TreadMundialAutomatico extends Thread {
                 int marcadorpenales = 0;
                 if (Datos.partidoActual > 47){
                         if (marcador1 == marcador2){
-                            System.out.println("Empatfggggggge");
+
                             marcadorpenales = (new Random()).nextInt(1);
                             System.out.println(marcadorpenales);
                             
@@ -143,11 +143,12 @@ public class TreadMundialAutomatico extends Thread {
                     EstructuraPartidos.actualiceEquiposPartido(51,primeroD ,segundoC );
                     EstructuraPartidos.actualiceEquiposPartido(54,primeroF ,segundoE );
                     EstructuraPartidos.actualiceEquiposPartido(55, primeroH,segundoG );
-                    System.out.println("###############+++");
+                    //System.out.println("###############+++");
                 }
             } catch (InterruptedException ex) {
                 Logger.getLogger(TreadMundialAutomatico.class.getName()).log(Level.SEVERE, null, ex);
             }
+
             
         }
     }

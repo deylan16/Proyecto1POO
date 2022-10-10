@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
  * @author deyla
  */
 public class VentanaGrupos extends javax.swing.JFrame {
-    public String ruta = "C:\\Users\\deyla\\OneDrive\\Documentos\\escudos\\";
+    public String ruta = "C:\\Users\\jecheverria\\Desktop\\escudos";
     /**
      * Creates new form VentanaGrupos
      */
