@@ -13,8 +13,9 @@ import javax.swing.ImageIcon;
  * @author deyla
  */
 public class VentanaGrupos extends javax.swing.JFrame {
-    public String ruta = "C:\\Users\\jecheverria\\Desktop\\escudos";
-    /**
+    public String ruta = "C:\\Users\\jecheverria\\Desktop\\escudos\\";
+    /**       
+
      * Creates new form VentanaGrupos
      */
     public VentanaGrupos() {
@@ -2990,6 +2991,7 @@ public class VentanaGrupos extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VentanaGrupos().setVisible(true);
+                
                 
             }
         });

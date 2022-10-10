@@ -37,7 +37,6 @@ public class TreadMundialAutomatico extends Thread {
                         if (marcador1 == marcador2){
 
                             marcadorpenales = (new Random()).nextInt(1);
-                            System.out.println(marcadorpenales);
                             
                         }}
                 
@@ -62,9 +61,6 @@ public class TreadMundialAutomatico extends Thread {
 
 
                 Datos.partidoActual += 1;
-                /*System.out.println("###############");
-                System.out.println(Datos.partidoActual);
-                System.out.println("###############");*/
                 if(Datos.partidoActual == 56){
                     EstructuraPartidos.actualiceEquiposPartido(57,EstructuraPartidos.infoPartido("GanadorReal", "Grupos", 48) ,EstructuraPartidos.infoPartido("GanadorReal", "Grupos", 49) );
                     EstructuraPartidos.actualiceEquiposPartido(56,EstructuraPartidos.infoPartido("GanadorReal", "Grupos", 50) ,EstructuraPartidos.infoPartido("GanadorReal", "Grupos", 51) );
@@ -82,36 +78,7 @@ public class TreadMundialAutomatico extends Thread {
 
                 }
                 if(Datos.partidoActual == 48){
-                    /*System.out.println("###############++++");
-                    System.out.println("Grupo A");
-                    //EstructuraPartidos.partidosFaseGrupos.get(58).set;
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("A")[0].getNombre());
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("A")[1].getNombre());
-                    System.out.println("Grupo B");
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("B")[0].getNombre());
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("B")[1].getNombre());
-                    System.out.println("Grupo C");
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("C")[0].getNombre());
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("C")[1].getNombre());
-                    System.out.println("Grupo D");
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("D")[0].getNombre());
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("D")[1].getNombre());
-                    System.out.println("Grupo E");
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("E")[0].getNombre());
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("E")[1].getNombre());
-                    System.out.println("Grupo F");
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("F")[0].getNombre());
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("F")[1].getNombre());
-                    System.out.println("Grupo G");
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("G")[0].getNombre());
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("G")[1].getNombre());
-                    System.out.println("Grupo H");
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("H")[0].getNombre());
-                    System.out.println(new EstructuraPartidos().MejoresGrupo("H")[1].getNombre());
-                    System.out.println("###############+++");
-                    System.out.println("###############++++");
-                    System.out.println("Grupo A");*/
-                    //EstructuraPartidos.partidosFaseGrupos.get(58).set;
+                    
                     String primeroA = new EstructuraPartidos().MejoresGrupo("A")[0].getNombre();
                     String segundoA  = new EstructuraPartidos().MejoresGrupo("A")[1].getNombre();
 
@@ -143,7 +110,6 @@ public class TreadMundialAutomatico extends Thread {
                     EstructuraPartidos.actualiceEquiposPartido(51,primeroD ,segundoC );
                     EstructuraPartidos.actualiceEquiposPartido(54,primeroF ,segundoE );
                     EstructuraPartidos.actualiceEquiposPartido(55, primeroH,segundoG );
-                    //System.out.println("###############+++");
                 }
             } catch (InterruptedException ex) {
                 Logger.getLogger(TreadMundialAutomatico.class.getName()).log(Level.SEVERE, null, ex);

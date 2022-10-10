@@ -102,7 +102,6 @@ public class Funciones {
         } catch (IOException ex) {
             Logger.getLogger(Funciones.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println(datos);
             
         
         
@@ -132,7 +131,6 @@ public class Funciones {
 
                     }
                     Datos.getUsuarios().add(ingresando);
-                    System.out.println(ingresando.getApuestasGrupos()[0][0]);
                     
                 }
                 
@@ -178,9 +176,6 @@ public class Funciones {
             
             
         }
-        System.out.println(aleatorio);
-        System.out.println(result[0]);
-        System.out.println(result[1]);
         return result;
     }
     public static String[] generarMaracadorheuristica(int partido) {
@@ -191,10 +186,6 @@ public class Funciones {
         int numero2 = (int) (Math.random()*puntuacio2);
         int numero3 = 0;
         int numero4 = 0;
-        System.out.println(puntuacio1);
-        System.out.println(puntuacio2);
-        System.out.println(numero1);
-        System.out.println(numero2);
         if(numero1 > numero2){
             while(true){
                 String[] result = generarMaracadorAleatorio();

@@ -21,9 +21,7 @@ public class EstructuraPartidos {
     static public ArrayList<Partido> partidosFaseGrupos = new ArrayList<Partido>();
 
     public EstructuraPartidos() {
-        //equipos = new ArrayList<Equipo>();
-        //partidosFaseGrupos = new ArrayList<Partido>();
-        //iniciaFaseGrupos();
+
         
     }
     
@@ -39,7 +37,6 @@ public class EstructuraPartidos {
     }
     
     static public Partido demePartidoEquipo(int indice){ 
-        //System.out.println(partidosFaseGrupos.get(0));
         return partidosFaseGrupos.get(indice);
         
     }
@@ -563,15 +560,12 @@ public class EstructuraPartidos {
         }
         if(VentanaQuiniela.pgb_progreso_mundial != null){
             VentanaQuiniela.pgb_progreso_mundial.setValue(Datos.partidoActual);
-            lst_ranking.setModel(new javax.swing.AbstractListModel<String>() {
+        
+        lst_ranking.setModel(new javax.swing.AbstractListModel<String>() {
                 String[] strings = Datos.to_string_nombres_puntos();
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }});
-        
-        }
-        
-        
-        
+        }   
     return 0;
     }
     
